@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "adoptionKitRepository": "mriekki/project-forge-adoption-kit",
+  "adoptionKitCommit": "219fc6d5922a45e0f5441af0964349ad6de9467f",
+  "coreRepository": "mriekki/project-forge-core",
+  "coreCommit": "e20e9b0e7102477a30bc15a771d62ba537efe60c",
+  "installedCapabilities": [
+    "team-safe-core",
+    "coach"
+  ],
+  "managedPaths": [
+    {
+      "path": ".github/agents/reviewer.agent.md",
+      "source": "payload/core/.github/agents/reviewer.agent.md",
+      "sha256": "ad00d8d0fad932687a8c7372e70993ba0f40f3f763a8b41fd9b6ee03a9a70df0"
+    },
+    {
+      "path": ".github/instructions/project-forge-docs.instructions.md",
+      "source": "payload/core/.github/instructions/project-forge-docs.instructions.md",
+      "sha256": "8ea123843f3e565a58e481dd5dc7182d84569bcd22d4b169c464b792bbe76275"
+    },
+    {
+      "path": ".github/instructions/project-forge-workflow.instructions.md",
+      "source": "payload/core/.github/instructions/project-forge-workflow.instructions.md",
+      "sha256": "a6b28d916b67c9eec3831e414b56be3636512f7f7740523d22aaaf6efa00d335"
+    },
+    {
+      "path": ".github/skills/cleanup-branches/SKILL.md",
+      "source": "payload/core/.github/skills/cleanup-branches/SKILL.md",
+      "sha256": "99b082f5a6eb183161bc6dc2f40e383e744a4443e6e3c56615ca9d010845eaf8"
+    },
+    {
+      "path": ".github/skills/coach/SKILL.md",
+      "source": "payload/coach/.github/skills/coach/SKILL.md",
+      "sha256": "68c28d5b9a55eedbf4261d12f1cd06f86b905e973b7ed7973fa4c49cf5338091"
+    },
+    {
+      "path": ".github/skills/code-walkthrough/SKILL.md",
+      "source": "payload/coach/.github/skills/code-walkthrough/SKILL.md",
+      "sha256": "0391f98dac6dfd41882c330425567ae595fde01fce63de521563c95647d2b889"
+    },
+    {
+      "path": ".github/skills/define-feature/SKILL.md",
+      "source": "payload/core/.github/skills/define-feature/SKILL.md",
+      "sha256": "1efa4c18d41deb4b26f132d440d881310864f8b0d37423d6b23431efeedb2e78"
+    },
+    {
+      "path": ".github/skills/deliver/SKILL.md",
+      "source": "payload/core/.github/skills/deliver/SKILL.md",
+      "sha256": "ffe9dbc862f83828b3acd8f8bf49ea912b7998dc0c844655bf83dfafcf7f4434"
+    },
+    {
+      "path": ".github/skills/grill-me/SKILL.md",
+      "source": "payload/core/.github/skills/grill-me/SKILL.md",
+      "sha256": "a71c2dcf63d7d88beb9112fcfe0cf19dbc233934f30bbe95727f58b29e845ffb"
+    },
+    {
+      "path": ".github/skills/learning-review/SKILL.md",
+      "source": "payload/coach/.github/skills/learning-review/SKILL.md",
+      "sha256": "b77ccbbd85fbe6c8d77d42bfea4b0d474e320c182f7d1f72010ff2301d869e66"
+    },
+    {
+      "path": ".github/skills/next-step/SKILL.md",
+      "source": "payload/core/.github/skills/next-step/SKILL.md",
+      "sha256": "68c05ad11f9c9fad7b0bc122995ca259fd54c523cb1fa5ac0e105ae523ef9d86"
+    },
+    {
+      "path": ".github/skills/project-forge-update/SKILL.md",
+      "source": "payload/core/.github/skills/project-forge-update/SKILL.md",
+      "sha256": "81f073082b3921b82620f3210bfe9c4e78ad948c60f2da0dde9d0bcab7330ddc"
+    },
+    {
+      "path": ".github/skills/pull-latest/SKILL.md",
+      "source": "payload/core/.github/skills/pull-latest/SKILL.md",
+      "sha256": "ca7dc6669c6eb81fd3a7961dc123cc9822fcccb7da3e86e3391f5f92b15fe093"
+    },
+    {
+      "path": ".github/skills/refine-requirements/SKILL.md",
+      "source": "payload/core/.github/skills/refine-requirements/SKILL.md",
+      "sha256": "70ee4dcf4fd3568c835428dae4b2a830604793d3d486e1c903c26e100fab6e64"
+    },
+    {
+      "path": ".github/skills/setup/SKILL.md",
+      "source": "payload/core/.github/skills/setup/SKILL.md",
+      "sha256": "2f1b88b31b2c7233a00ab9293cd98a5fade00e114e1a442a793affbc7fe4ad83"
+    },
+    {
+      "path": ".github/skills/start-work/SKILL.md",
+      "source": "payload/core/.github/skills/start-work/SKILL.md",
+      "sha256": "f054edd5a745489623579d25e334f5fcd6cebd6e73b86970074e7c2444f9af40"
+    },
+    {
+      "path": ".github/skills/wait-what/SKILL.md",
+      "source": "payload/core/.github/skills/wait-what/SKILL.md",
+      "sha256": "dba3aa4f042b813de960b60c47ae4c8a3dccb72fdc89c597fe04b720b27f5316"
+    },
+    {
+      "path": "docs/project-forge/ADOPTION_WORKFLOW.md",
+      "source": "payload/core/docs/project-forge/ADOPTION_WORKFLOW.md",
+      "sha256": "212002355485667f923ffacc5e4c12e1439860247590e215bb9f5acc67994b24"
+    },
+    {
+      "path": "docs/project-forge/COACHING_GUIDE.md",
+      "source": "payload/coach/docs/project-forge/COACHING_GUIDE.md",
+      "sha256": "cf141525e71467b189b18283ba8616859c665bba632f92de80e94f2de2e8f7b4"
+    },
+    {
+      "path": "docs/project-forge/JIRA_ACCESS_GUIDE.md",
+      "source": "payload/core/docs/project-forge/JIRA_ACCESS_GUIDE.md",
+      "sha256": "254893d1030ddaa02518ef482d02bb97f09a92b98ae7da3b03a91dfd326db932"
+    },
+    {
+      "path": "docs/project-forge/README.md",
+      "source": "payload/core/docs/project-forge/README.md",
+      "sha256": "99aace96ebd9ebcb7c11cf93850330ee1a0eb3841a31c42edc318e1d913777aa"
+    },
+    {
+      "path": "docs/project-forge/WORK_ITEM_CONTEXT.md",
+      "source": "payload/core/docs/project-forge/WORK_ITEM_CONTEXT.md",
+      "sha256": "5c03661df4994c24d7b7429fd1c9191e9eaaf18624e6af2fc0615d11b2ec3dd2"
+    },
+    {
+      "path": "docs/project-forge/templates/FEATURE_BRIEF_TEMPLATE.md",
+      "source": "payload/briefs/docs/project-forge/templates/FEATURE_BRIEF_TEMPLATE.md",
+      "sha256": "d09737d7e67b7bad50a779ce0a6b3a95d17ba9de7a2e60423763ea3d934ce768"
+    },
+    {
+      "path": "docs/project-forge/templates/PRODUCT_BRIEF_TEMPLATE.md",
+      "source": "payload/briefs/docs/project-forge/templates/PRODUCT_BRIEF_TEMPLATE.md",
+      "sha256": "fcab7508dd5d53ea9dac3a35b7c31b4adac8c1c37b5df2224f2fb47c52432f58"
+    },
+    {
+      "path": "docs/project-forge/templates/REQUIREMENTS_TEMPLATE.md",
+      "source": "payload/briefs/docs/project-forge/templates/REQUIREMENTS_TEMPLATE.md",
+      "sha256": "ec85cc723071edb01f09acca41e20e9833afe21d06d103b39dfcdbfb59a31aed"
+    }
+  ]
+}

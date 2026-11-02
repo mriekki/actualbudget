@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "adoptionMode": "existing-repo",
+  "workItemSource": "github-issues",
+  "jira": {
+    "accessMode": "none",
+    "baseUrl": "",
+    "epics": "supported-analyze-role"
+  },
+  "productBriefs": {
+    "mode": "suggest-complex"
+  },
+  "featureBriefs": {
+    "mode": "suggest-complex"
+  },
+  "localDetailedRequirements": {
+    "mode": "optional-supplemental"
+  },
+  "installedCapabilities": [
+    "team-safe-core",
+    "coach"
+  ],
+  "engineeringContextFile": ".github/project-forge-engineering-context.json",
+  "adoptionAuthorityFile": "PROJECT_ADOPTION.json",
+  "preserveExisting": {
+    "readme": true,
+    "prTemplate": true,
+    "ci": true,
+    "branchConventions": true,
+    "rootCopilotInstructions": true
+  },
+  "operationsProfileFile": ".github/project-forge-operations.json"
+}

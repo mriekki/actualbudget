@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "human-confirmed",
+  "source": "project-forge-adoption-discovery",
+  "build": {
+    "defaultTarget": "all",
+    "targets": {
+      "all": {
+        "command": [
+          "yarn",
+          "build"
+        ],
+        "workingDirectory": "."
+      }
+    }
+  },
+  "run": {
+    "defaultTarget": "browser",
+    "targets": {
+      "browser": {
+        "command": [
+          "yarn",
+          "start"
+        ],
+        "workingDirectory": ".",
+        "longRunning": true
+      }
+    }
+  },
+  "test": {
+    "defaultTarget": "all",
+    "targets": {
+      "all": {
+        "command": [
+          "yarn",
+          "test"
+        ],
+        "workingDirectory": "."
+      }
+    }
+  },
+  "lint": {
+    "defaultTarget": "all",
+    "targets": {
+      "all": {
+        "command": [
+          "yarn",
+          "lint"
+        ],
+        "workingDirectory": "."
+      }
+    }
+  },
+  "typecheck": {
+    "defaultTarget": "all",
+    "targets": {
+      "all": {
+        "command": [
+          "yarn",
+          "typecheck"
+        ],
+        "workingDirectory": "."
+      }
+    }
+  }
+}

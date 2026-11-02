@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "human-confirmed",
+  "source": "project-forge-adoption-discovery",
+  "projectFiles": [
+    "package.json",
+    "AGENTS.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/agents/pr-and-commit-rules.md",
+    ".claude/settings.json",
+    ".codex/config.toml",
+    ".cursor/hooks.json"
+  ],
+  "repositoryWorkflow": {
+    "commitMessage": "[AI] Adopt Project Forge workspace",
+    "pullRequest": {
+      "title": "[AI] Adopt Project Forge workspace",
+      "body": {
+        "mode": "repository-template",
+        "templatePath": ".github/PULL_REQUEST_TEMPLATE.md"
+      }
+    }
+  }
+}
