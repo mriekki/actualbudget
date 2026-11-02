@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "state": "approved",
+  "adoptionKit": {
+    "repository": "mriekki/project-forge-adoption-kit",
+    "commit": "219fc6d5922a45e0f5441af0964349ad6de9467f",
+    "protocolVersion": 1
+  },
+  "discovery": {
+    "source": "project-forge-bootstrap",
+    "bootstrapRepository": "mriekki/project-forge-bootstrap",
+    "bootstrapCommit": "ada0d23e5d793ab1cca28b015acc18dd429c8cdb"
+  },
+  "target": {
+    "repository": "mriekki/actualbudget",
+    "defaultBranch": "master",
+    "analyzedCommit": "5897cfa65afec3d0252d7467e5b7a033fb66900b"
+  },
+  "repositoryRelationship": {
+    "kind": "fork",
+    "upstream": {
+      "repository": "actualbudget/actual",
+      "defaultBranch": "master"
+    },
+    "syncIntent": "manual-periodic",
+    "contributionIntent": "may-contribute",
+    "upstreamWrites": false,
+    "integrationStrategy": "reviewed-merge"
+  },
+  "workspace": {
+    "workItemSource": "github-issues",
+    "jira": {
+      "accessMode": "none",
+      "baseUrl": "",
+      "epics": "supported-analyze-role"
+    },
+    "productBriefs": {
+      "mode": "suggest-complex"
+    },
+    "featureBriefs": {
+      "mode": "suggest-complex"
+    },
+    "capabilities": [
+      "team-safe-core",
+      "coach"
+    ],
+    "preserveExisting": {
+      "readme": true,
+      "prTemplate": true,
+      "ci": true,
+      "branchConventions": true,
+      "rootCopilotInstructions": true
+    }
+  },
+  "engineeringContext": {
+    "schemaVersion": 1,
+    "status": "human-confirmed",
+    "source": "project-forge-adoption-discovery",
+    "projectFiles": [
+      "package.json",
+      "AGENTS.md",
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      ".github/agents/pr-and-commit-rules.md",
+      ".claude/settings.json",
+      ".codex/config.toml",
+      ".cursor/hooks.json"
+    ],
+    "repositoryWorkflow": {
+      "commitMessage": "[AI] Adopt Project Forge workspace",
+      "pullRequest": {
+        "title": "[AI] Adopt Project Forge workspace",
+        "body": {
+          "mode": "repository-template",
+          "templatePath": ".github/PULL_REQUEST_TEMPLATE.md"
+        }
+      }
+    }
+  },
+  "operationsProfile": {
+    "schemaVersion": 1,
+    "status": "human-confirmed",
+    "source": "project-forge-adoption-discovery",
+    "build": {
+      "defaultTarget": "all",
+      "targets": {
+        "all": {
+          "command": [
+            "yarn",
+            "build"
+          ],
+          "workingDirectory": "."
+        }
+      }
+    },
+    "run": {
+      "defaultTarget": "browser",
+      "targets": {
+        "browser": {
+          "command": [
+            "yarn",
+            "start"
+          ],
+          "workingDirectory": ".",
+          "longRunning": true
+        }
+      }
+    },
+    "test": {
+      "defaultTarget": "all",
+      "targets": {
+        "all": {
+          "command": [
+            "yarn",
+            "test"
+          ],
+          "workingDirectory": "."
+        }
+      }
+    },
+    "lint": {
+      "defaultTarget": "all",
+      "targets": {
+        "all": {
+          "command": [
+            "yarn",
+            "lint"
+          ],
+          "workingDirectory": "."
+        }
+      }
+    },
+    "typecheck": {
+      "defaultTarget": "all",
+      "targets": {
+        "all": {
+          "command": [
+            "yarn",
+            "typecheck"
+          ],
+          "workingDirectory": "."
+        }
+      }
+    }
+  },
+  "aiReconciliation": {
+    "status": "human-confirmed",
+    "assets": [
+      {
+        "path": ".github/agents/pr-and-commit-rules.md",
+        "disposition": "INTEGRATE",
+        "expectedSha256": "7870e658dc9cc0c31931016d200b2791934fff53dd6d084ffa301a5ab779a3ae",
+        "reason": "Retain repository AI contribution rules; Project Forge owns lifecycle gates, and target-repository issue creation remains prohibited outside explicit Project Forge control-plane orchestration."
+      },
+      {
+        "path": ".github/hooks/impeccable.json",
+        "disposition": "INTEGRATE",
+        "expectedSha256": "f9b261859a149f0b5d15e9e13b5094e6cb609829b9105681bfbdb5b7f31c03b7",
+        "reason": "Retain the repository UI design hook and integrate Project Forge without replacing its UI guidance."
+      },
+      {
+        "path": ".claude/settings.json",
+        "disposition": "INTEGRATE",
+        "expectedSha256": "734a1050fe6665571feecfe85d9fceb10d8b3e39890fc4ef374013aaa735d9e1",
+        "reason": "Retain Claude hooks that enforce the repository shared agent guardrails."
+      },
+      {
+        "path": ".codex/config.toml",
+        "disposition": "INTEGRATE",
+        "expectedSha256": "7d2eeae7d5b9765526745596d216158816325c821f46ad4944c87391558b29bd",
+        "reason": "Retain Codex lifecycle hooks and shared repository guard integration."
+      },
+      {
+        "path": ".cursor/hooks.json",
+        "disposition": "INTEGRATE",
+        "expectedSha256": "366dd877a4fca9655819bc461cdb1bf7ebb5529f647e2c28d005420a5a5e3993",
+        "reason": "Retain Cursor hooks as part of the repository cross-agent guard capability."
+      }
+    ]
+  },
+  "projectArtifacts": []
+}
