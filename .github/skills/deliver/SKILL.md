@@ -137,6 +137,16 @@ PR evidence may include:
 
 Do not claim evidence that was not observed.
 
+For work with a stable work-item ID, keep one hidden Project Forge navigation marker in the PR body using the exact resolved ID:
+
+```html
+<!-- project-forge-work-item: <ID> -->
+```
+
+The marker is navigation metadata only. It does not prove requirement approval, implementation acceptance, review, CI, merge readiness, delivery completion, deployment, or any other lifecycle state. Never use the marker alone to satisfy a gate.
+
+When `/deliver` resumes an existing PR that clearly corresponds to the same ID-backed work item and the marker is absent, adding the marker is routine PR-body maintenance within the existing `/deliver` authorization. Preserve the rest of the existing PR body and do not add or rewrite the marker when the work-item identity is ambiguous. For ad hoc work without a stable work-item ID, omit the marker rather than inventing one.
+
 ## 6. Stop conditions during routine delivery
 
 Stop before/during routine writes for:
@@ -197,7 +207,7 @@ If a Draft PR was required earlier and all readiness conditions are now satisfie
 
 ## 8. Single merge + finalize gate
 
-When PR evidence still matches the accepted implementation and CI/policy are satisfactory, combine final PR acceptance and merge authorization into one meaningful gate:
+When PR evidence still matches the accepted implementation and CI/policy are satisfactory, combine final PR acceptance and merge authorization into one meaningful gate. First show:
 
 ```text
 MERGE READY
@@ -206,13 +216,17 @@ PR CI: GREEN
 Reviewer: READY
 PR diff: matches accepted delivery scope
 Mergeable/policy: <observed state>
-
-1. Merge and finalize delivery [HUMAN ACCEPTANCE + GITHUB/GIT WRITE] — recommended
-2. Review final PR diff first [READ ONLY]
-3. Leave PR open [NO ACTION]
 ```
 
-Selecting option 1 means:
+Then render the mutually exclusive gate through the host-native **single-select structured choice UI** when available. In VS Code use the native question surface such as `vscode_askQuestions`. Offer:
+
+- `Merge and finalize delivery` `[HUMAN ACCEPTANCE + GITHUB/GIT WRITE]` — `RECOMMENDED`
+- `Review final PR diff first` `[READ ONLY]`
+- `Leave PR open` `[NO ACTION]`
+
+Use a numbered text list only when structured choice UI is unavailable.
+
+Selecting `Merge and finalize delivery` means:
 - the human accepts the final PR as observed,
 - merge is authorized using the repository-approved strategy,
 - applicable post-merge default-branch CI/policy may be observed/rechecked automatically,
@@ -247,7 +261,7 @@ Only after configured post-merge default-branch CI and any additional observable
 
 ## 10. Delivered-branch finalization
 
-For a normal short-lived delivered branch, option 1 at the merge gate already authorizes finalization. Do not ask a separate `Delete branch?` question.
+For a normal short-lived delivered branch, the `Merge and finalize delivery` gate choice already authorizes finalization. Do not ask a separate `Delete branch?` question.
 
 Preserve by default:
 - the configured default branch,

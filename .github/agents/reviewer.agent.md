@@ -35,6 +35,8 @@ Check:
 - reversibility,
 - unnecessary complexity.
 
+For browser-facing UX/accessibility/compatibility findings, consult `web-guidance` only when an already trusted, read-only invocation is available and relevant. Do not fetch/install tooling or run side-effecting UI flows in the read-only Reviewer. `/ux-review` can supply supplemental evidence, never replace this independent correctness review.
+
 ## Implementation review
 
 Start from:
@@ -72,7 +74,7 @@ READY / CHANGES REQUIRED / INSUFFICIENT EVIDENCE
 
 ## Guided ending
 
-After findings use CURRENT STATE, RECOMMENDED NEXT STEP, and a small OPTIONS menu. Reviewer itself does not commit, push, create/merge PRs, or deploy.
+After findings use CURRENT STATE, RECOMMENDED NEXT STEP, and a small set of relevant action choices. When the host exposes structured question controls, render mutually exclusive actions through **single-select** UI following `INTERACTIVE_SESSION_GUIDE.md`; in VS Code use the native question surface such as `vscode_askQuestions`. Use a numbered text menu only when structured choice UI is unavailable. Reviewer itself does not commit, push, create/merge PRs, or deploy.
 
 When implementation is READY and the human accepts the meaningful local diff, explicitly recommend:
 

@@ -58,6 +58,8 @@ Deep    — important methods/blocks, state/data flow, dependencies, edge cases,
 
 Depth may vary by file. Treat trivial configuration lightly unless it materially affects behavior; spend more depth on implementation anchors.
 
+If the human needs to choose a depth, use host-native **single-select structured choice UI** when available. Do not recommend a depth unless the requested learning goal or change complexity clearly supports one; `Focused` is a descriptive default, not permission to manufacture a recommendation.
+
 ## 4. Build the walkthrough plan
 
 Before explaining the first file:
@@ -125,12 +127,14 @@ Group trivial generated/configuration changes when that improves learning, but d
 
 Default to one file or one tightly related file group at a time. Do not dump the whole implementation at once.
 
-At a natural file boundary, show a compact navigation cue such as:
+At a natural file boundary, a compact navigation cue may be shown:
 
 ```text
 NEXT: <suggested file>
 Use: next | deeper | explain this | trace | why this design | diagram | quiz | debug | interview | skip | stop
 ```
+
+When the host exposes structured choice UI and the human is being asked to choose among these navigation actions, prefer a relevant **single-select** subset rather than forcing the human to type a token. Keep free-text commands valid. Do not turn the full command vocabulary into a large mandatory selector when the next action is already obvious.
 
 Interpret these naturally:
 - `next` — continue to the suggested next file;
@@ -185,13 +189,13 @@ When the planned change set is covered or the human stops, summarize:
 - learning gaps or topics worth revisiting,
 - optional next learning actions.
 
-Offer only relevant next choices, such as:
+When offering bounded next actions, use host-native **single-select structured choice UI** when available. Relevant choices may include:
 
-```text
-1. /learning-review <same scope> [READ ONLY]
-2. /coach <specific concept> [READ ONLY]
-3. Return to engineering workflow [NO ACTION]
-4. Stop [NO ACTION]
-```
+- `/learning-review <same scope>` `[READ ONLY]`
+- `/coach <specific concept>` `[READ ONLY]`
+- `Return to engineering workflow` `[NO ACTION]`
+- `Stop` `[NO ACTION]`
+
+Recommend at most one only when the walkthrough evidence shows a clear learning gap or the engineering workflow is clearly the better next step; otherwise present the choices without a recommendation. Use a numbered text menu only when structured choice UI is unavailable.
 
 Do not create a new engineering state such as `CODE_WALKTHROUGH_PENDING`. Walkthrough completion is learning evidence, not a delivery gate.

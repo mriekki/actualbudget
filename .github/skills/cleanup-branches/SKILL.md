@@ -114,18 +114,14 @@ If no branch is safely deletable, stop after the preview.
 
 ## 5. Cleanup gate
 
-For a non-empty verified-safe set, present one bounded destructive gate:
+For a non-empty verified-safe set, present one bounded destructive gate using the host-native **single-select structured choice UI** when available; in VS Code use the native question surface such as `vscode_askQuestions`. Offer:
 
-```text
-BRANCH CLEANUP READY
+- `Delete verified-safe local + remote branches` `[GIT + GITHUB WRITE]` — `RECOMMENDED`
+- `Delete verified-safe remote branches only` `[GITHUB WRITE]`
+- `Delete verified-safe local branches only` `[GIT WRITE]`
+- `Stop` `[NO ACTION]`
 
-1. Delete verified-safe local + remote branches [GIT + GITHUB WRITE] — recommended
-2. Delete verified-safe remote branches only [GITHUB WRITE]
-3. Delete verified-safe local branches only [GIT WRITE]
-4. Stop [NO ACTION]
-```
-
-Only the selected option authorizes the corresponding deletions. Do not include REVIEW REQUIRED branches in the bounded action.
+Use a numbered text menu only when structured choice UI is unavailable. Only the selected choice authorizes the corresponding deletions. Do not include REVIEW REQUIRED branches in the bounded action.
 
 ## 6. Revalidate before deletion
 
