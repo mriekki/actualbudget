@@ -27,6 +27,8 @@ Read only the minimum relevant context. Do not preload unrelated work items. Do 
 
 Never assume `Jira Epic == Feature Brief`.
 
+When review/approval will concern a local artifact, classify it as the PRIMARY review subject. Supporting Feature/Product briefs, ADRs, and design documents are CONTEXT or TRACEABILITY unless they are themselves the decision subject.
+
 ## 2. Decide whether detail is warranted
 
 Detailed refinement is useful for behavior such as:
@@ -113,22 +115,26 @@ STATUS
 <DRAFT / APPROVED / external status / not represented locally>
 ```
 
-Then present only relevant choices, for example:
+Then present only relevant actions as a **single-select structured choice** when the host supports it. In VS Code, use the native question surface such as `vscode_askQuestions` rather than printing a numbered menu. Conceptual choices may include:
 
-```text
-1. Review outcomes [READ ONLY]
-2. Review rules [READ ONLY]
-3. Review acceptance scenarios [READ ONLY]
-4. Refine identified gaps [MODIFIES DOCS or PROPOSED EXTERNAL UPDATE]
-5. Grill an unresolved decision [READ ONLY]
-6. Review full requirements/work item [READ ONLY]
-7. Approve local requirements when applicable [REQUIREMENTS GATE]
-8. Stop [NO ACTION]
-```
+- `Review outcomes` `[READ ONLY]`
+- `Review rules` `[READ ONLY]`
+- `Review acceptance scenarios` `[READ ONLY]`
+- `Refine identified gaps` `[MODIFIES DOCS or PROPOSED EXTERNAL UPDATE]`
+- `Grill an unresolved decision` `[READ ONLY]`
+- `Review full requirements/work item` `[READ ONLY]`
+- `Approve local requirements` `[REQUIREMENTS GATE]` when applicable
+- `Stop` `[NO ACTION]`
+
+When the human selects `Review full requirements/work item`, foreground the PRIMARY review surface when the host supports it. For local Markdown requirements, prefer rendered Markdown preview. In VS Code, use `projectForge.openReviewArtifact` with the exact workspace-relative path when available. For an external-primary work item, use the best available external issue/item surface instead of creating a local surrogate solely for preview.
+
+Make a recommendation only when current requirement evidence or a clear engineering tradeoff supports one. If so, mark exactly one choice with the host's `recommended` indicator when that metadata exists; otherwise append `[RECOMMENDED]` to exactly one option label. Briefly explain why in the option description or surrounding prompt. A default/preselected value may match the recommendation, but a default alone must never communicate advice or approval. If there is no clear basis, show the choices without a recommendation and without a preference-implying default. The selected answer, not the recommendation, controls what the session does or records.
+
+If the host has no structured choice UI, present the same relevant choices as a concise numbered or lettered text fallback, preserve `[RECOMMENDED]` on the evidence-backed option when applicable, and accept the number/letter, label, or free-form intent. Do not use the text fallback as the normal VS Code path.
 
 ## 5. Active refinement session
 
-Once the human selects a modifying refinement option, enter a bounded continuous session:
+Once the human selects a modifying refinement choice, enter a bounded continuous session:
 
 ```text
 ask one material requirement question
@@ -139,7 +145,23 @@ ask one material requirement question
 → next material question
 ```
 
-For bounded requirement decisions such as lifecycle policy, validation behavior, destructive/reversible handling, or a small set of credible alternatives, use the choice-first interaction guidance from `INTERACTIVE_SESSION_GUIDE.md`. Keep outcome wording, workflow descriptions, acceptance intent, and other human-authored framing open-ended when predefined choices would constrain the requirement.
+For bounded requirement decisions such as lifecycle policy, validation behavior, destructive/reversible handling, or a small set of credible alternatives, use the choice-first interaction guidance from `INTERACTIVE_SESSION_GUIDE.md`. Render mutually exclusive alternatives through host-native **single-select** controls when available. Use multi-select only when the requirement genuinely permits multiple simultaneous selections. Keep `Other / specify` or free-text available when the option set may be incomplete. Keep outcome wording, workflow descriptions, acceptance intent, and other human-authored framing open-ended when predefined choices would constrain the requirement.
+
+Recommendation behavior follows the shared guide: recommend at most one option, only when evidence/tradeoffs support it; make the recommendation visibly distinguishable through native metadata or `[RECOMMENDED]`; give a concise rationale; never record the recommendation as accepted until the human selects or confirms it; and honor a `no recommendation` request for that question only.
+
+Example of a supported recommendation:
+
+```text
+Decision: How should a browser-to-real-SQLite path be proven for a narrowly scoped work item?
+
+Choices:
+- Integration test against real SQLite
+- Browser smoke check through the API
+- Both [RECOMMENDED] — proves persistence and browser/API paths without implying a broad end-to-end suite
+- Other / specify
+```
+
+Treat this as advice for the human to accept, change, or replace. Do not record `Both` as a requirement until the human selects or confirms it.
 
 Do not ask after each answer whether to update.
 
@@ -162,7 +184,7 @@ Stop automatic reconciliation when an answer would:
 - require a cross-cutting architecture decision,
 - remain too ambiguous to record faithfully.
 
-Then present a small explicit choice.
+Then present a small explicit choice using the same host-native structured-choice rule. Keep the question open-ended instead when the human needs to explain or reframe the conflict in their own words.
 
 ## 7. Approval gate
 
@@ -175,7 +197,26 @@ APPROVED
 
 Human approval is explicit. Do not infer approval from review/planning/implementation.
 
-Before approval report coverage and open material decisions. Only an explicit `[REQUIREMENTS GATE]` choice may change local status to `APPROVED`.
+Before approval:
+1. report coverage and open material decisions;
+2. identify the exact PRIMARY local requirements artifact;
+3. foreground/open that artifact in the best available review surface when the host supports it;
+4. only then render the `[REQUIREMENTS GATE]` choice.
+
+For Markdown requirements in VS Code, prefer rendered preview; when the Project Forge companion command is available, invoke `projectForge.openReviewArtifact` with the exact workspace-relative requirements path. If automatic opening is unavailable, provide the exact path/link and explicitly tell the human that this is the artifact being approved.
+
+The gate should make the review subject unmistakable, for example:
+
+```text
+HUMAN REVIEW REQUIRED
+
+Gate: REQUIREMENTS APPROVAL
+Primary artifact: docs/work-items/<work-item>/requirements.md
+Opened: Markdown Preview / <fallback surface>
+Open material decisions: NONE / list
+```
+
+Only an explicit `[REQUIREMENTS GATE]` choice may change local status to `APPROVED`. Opening the document, viewing the preview, or selecting a read-only review action never changes approval state. When the host offers structured choices, render this approval gate as a single-select action, not a numbered chat menu.
 
 External work-item status/approval follows the external team's conventions; Project Forge must not fabricate a local approval state.
 
@@ -198,10 +239,10 @@ Authority/status:
 <source and status>
 ```
 
-Then offer review, more grilling/refinement, approval when applicable, or stop.
+Then offer review, more grilling/refinement, approval when applicable, or stop using the same structured-choice-first rule.
 
 ## 9. Stop boundary
 
 Do not create implementation plans or production code.
 
-When requirements are ready, recommend `/start-work <ID-or-key>`.
+When requirements are ready, recommend `/start-work <ID-or-key>`. That command may prepare the implementation plan, but STANDARD/ELEVATED implementation still requires the distinct plan-approval gate defined by `/start-work`.

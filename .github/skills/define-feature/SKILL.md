@@ -63,7 +63,7 @@ Do not create a competing source of truth.
 
 Ask one material question at a time when a real decision is unresolved.
 
-For bounded decisions with a small credible answer space, use the choice-first interaction guidance from `INTERACTIVE_SESSION_GUIDE.md`. Keep initial product/problem framing, desired outcomes, workflows, and other answers that need the human's own wording open-ended rather than constraining them to invented options.
+For bounded decisions with a small credible answer space, use the choice-first interaction guidance from `INTERACTIVE_SESSION_GUIDE.md`. When the host exposes structured choice controls, render mutually exclusive alternatives through single-select UI rather than a plain numbered menu; use multi-select only when several simultaneous selections are actually valid. Keep `Other / specify` or free-text available when choices may be incomplete. Keep initial product/problem framing, desired outcomes, workflows, and other answers that need the human's own wording open-ended rather than constraining them to invented options.
 
 Clarify only what matters, such as:
 - user/engineering outcome,
@@ -123,22 +123,13 @@ If systematic lower-level coverage is valuable, recommend:
 
 ## 7. Guided ending
 
-Use a small evidence-backed menu, for example:
+Use a small evidence-backed set of relevant actions. In VS Code, render them through the host-native **single-select structured choice UI** such as `vscode_askQuestions` when available. Conceptual choices may include:
 
-```text
-CURRENT STATE
-<what is defined and what remains open>
+- `Review definition` `[READ ONLY]`
+- `Grill unresolved behavior` `[READ ONLY]`
+- `Refine detailed requirements` `[READ ONLY initially]`
+- `Approve requirements/scope` `[REQUIREMENTS GATE]` when applicable
+- `Start work` `[READ ONLY]` when already ready
+- `Stop` `[NO ACTION]`
 
-RECOMMENDED NEXT STEP
-<one action and why>
-
-OPTIONS
-1. Review definition [READ ONLY]
-2. Grill unresolved behavior [READ ONLY]
-3. Refine detailed requirements [READ ONLY initially]
-4. Approve requirements/scope when applicable [REQUIREMENTS GATE]
-5. Start work if already ready [READ ONLY]
-6. Stop [NO ACTION]
-```
-
-Only show relevant options. A file-changing choice authorizes only that bounded action/session.
+Make the recommended next action visible when evidence supports one. Use a numbered text menu only when structured choice UI is unavailable. A file-changing choice authorizes only that bounded action/session.

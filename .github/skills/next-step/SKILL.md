@@ -70,7 +70,7 @@ When deterministic setup passes but human workspace acceptance is still needed, 
 
 When the workspace is accepted and the first approved work item is clear, recommend `/start-work <ID>`.
 
-If the developer wants the broader status instead of one action, offer `/progress` as a read-only option.
+If the developer wants the broader status instead of one action, offer `/progress` as a read-only choice.
 
 ## 3. Engineering/delivery states
 
@@ -111,14 +111,13 @@ CURRENT STATE
 RECOMMENDED NEXT STEP
 <one action and why>
 
-OPTIONS
-1. ... [READ ONLY]
-2. ... [MODIFIES FILES]
-3. ... [GIT + GITHUB WRITE]
-4. Stop [NO ACTION]
+CHOICES
+<only relevant bounded actions, rendered through structured choice UI when available>
 ```
 
-Only show relevant options. `/next-step` orients; it does not become another workflow database.
+When there is more than one relevant action, use the host's native **single-select structured choice UI** following `INTERACTIVE_SESSION_GUIDE.md`. In VS Code, use the question surface such as `vscode_askQuestions` when available. Keep consequence labels visible, mark the recommended choice where evidence supports one, and include `Other / specify` or free-text only when the action space may be incomplete. Use multi-select only for an explicitly multi-action workflow; ordinary `/next-step` choices are mutually exclusive.
+
+A textual numbered `OPTIONS` list is only the fallback when no structured choice UI is available. Only show relevant choices. `/next-step` orients; it does not become another workflow database.
 
 For an unprepared generated workspace, a good result is simply:
 
@@ -128,11 +127,9 @@ Local setup has not been completed on this computer.
 
 RECOMMENDED NEXT STEP
 /setup
-
-OPTIONS
-1. /progress [READ ONLY]
-2. Stop [NO ACTION]
 ```
+
+If useful, offer `/progress` `[READ ONLY]` and `Stop` `[NO ACTION]` through the structured selector; do not print a numbered menu in normal VS Code use.
 
 ## 5. Optional documentation and learning choices
 
@@ -146,6 +143,8 @@ When implementation is stable enough to understand or document, `/next-step` may
 /db-lab [changes <work-item>]
 /system-lab [changes <work-item>]
 ```
+
+If the human is being asked to select one of these bounded next actions, use the same single-select structured-choice rule. The command list above is descriptive, not a required numbered menu.
 
 Prefer `/docs` for the coherent project briefing/document map, `/code-walkthrough` for implementation flow, `/db-lab` for concrete schema/query/index/ORM evidence, and `/system-lab` for architecture/runtime/failure/scale evidence.
 

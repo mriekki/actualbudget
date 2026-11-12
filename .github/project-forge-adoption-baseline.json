@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "adoptionKitRepository": "mriekki/project-forge-adoption-kit",
-  "adoptionKitCommit": "219fc6d5922a45e0f5441af0964349ad6de9467f",
+  "adoptionKitCommit": "0ad8ea0a20f265271e5d2e5438a3fdd4f0c042f8",
   "coreRepository": "mriekki/project-forge-core",
-  "coreCommit": "e20e9b0e7102477a30bc15a771d62ba537efe60c",
+  "coreCommit": "59f5657bbb6f1edc45d1e8619ab1d0875b7907e0",
   "installedCapabilities": [
     "team-safe-core",
     "coach"
@@ -12,7 +12,7 @@
     {
       "path": ".github/agents/reviewer.agent.md",
       "source": "payload/core/.github/agents/reviewer.agent.md",
-      "sha256": "ad00d8d0fad932687a8c7372e70993ba0f40f3f763a8b41fd9b6ee03a9a70df0"
+      "sha256": "ef62ef56803eebc224727a2b7f94c6210fb0d3cfc99800ba58ac8e2f4dba5d19"
     },
     {
       "path": ".github/instructions/project-forge-docs.instructions.md",
@@ -20,14 +20,19 @@
       "sha256": "8ea123843f3e565a58e481dd5dc7182d84569bcd22d4b169c464b792bbe76275"
     },
     {
+      "path": ".github/instructions/project-forge-web-guidance.instructions.md",
+      "source": "payload/core/.github/instructions/project-forge-web-guidance.instructions.md",
+      "sha256": "5e9c32ea86d0ad868882ec8d6c5263931cd12eb26d7f9a432dfae1895f8b0738"
+    },
+    {
       "path": ".github/instructions/project-forge-workflow.instructions.md",
       "source": "payload/core/.github/instructions/project-forge-workflow.instructions.md",
-      "sha256": "a6b28d916b67c9eec3831e414b56be3636512f7f7740523d22aaaf6efa00d335"
+      "sha256": "c2ab2b578c3b5b47d79f9aa64daeafcd40c89cfa8924244177950bdf4e10115b"
     },
     {
       "path": ".github/skills/cleanup-branches/SKILL.md",
       "source": "payload/core/.github/skills/cleanup-branches/SKILL.md",
-      "sha256": "99b082f5a6eb183161bc6dc2f40e383e744a4443e6e3c56615ca9d010845eaf8"
+      "sha256": "b44af82b8e21693fcc600cb9628c50f49a117c7cfb7840af0f2ccedad2f96dc7"
     },
     {
       "path": ".github/skills/coach/SKILL.md",
@@ -37,17 +42,17 @@
     {
       "path": ".github/skills/code-walkthrough/SKILL.md",
       "source": "payload/coach/.github/skills/code-walkthrough/SKILL.md",
-      "sha256": "0391f98dac6dfd41882c330425567ae595fde01fce63de521563c95647d2b889"
+      "sha256": "34cb60680a3effc6af3a5ec22fe0c20d4b9b8064b8b808afed673be988b0f210"
     },
     {
       "path": ".github/skills/define-feature/SKILL.md",
       "source": "payload/core/.github/skills/define-feature/SKILL.md",
-      "sha256": "1efa4c18d41deb4b26f132d440d881310864f8b0d37423d6b23431efeedb2e78"
+      "sha256": "c9f85d76a701b3d1af5c70cd74b19ce119b5735cf3537e2618159d58394ffd02"
     },
     {
       "path": ".github/skills/deliver/SKILL.md",
       "source": "payload/core/.github/skills/deliver/SKILL.md",
-      "sha256": "ffe9dbc862f83828b3acd8f8bf49ea912b7998dc0c844655bf83dfafcf7f4434"
+      "sha256": "6a3886493e9b59725ff53652972c1830478176a8c8da648448401d9051820db4"
     },
     {
       "path": ".github/skills/grill-me/SKILL.md",
@@ -62,7 +67,7 @@
     {
       "path": ".github/skills/next-step/SKILL.md",
       "source": "payload/core/.github/skills/next-step/SKILL.md",
-      "sha256": "68c05ad11f9c9fad7b0bc122995ca259fd54c523cb1fa5ac0e105ae523ef9d86"
+      "sha256": "7c24a15b9069dcc5218319ab7fb72231e48efd2ebd325d8ff250e142cb3aa813"
     },
     {
       "path": ".github/skills/project-forge-update/SKILL.md",
@@ -72,27 +77,37 @@
     {
       "path": ".github/skills/pull-latest/SKILL.md",
       "source": "payload/core/.github/skills/pull-latest/SKILL.md",
-      "sha256": "ca7dc6669c6eb81fd3a7961dc123cc9822fcccb7da3e86e3391f5f92b15fe093"
+      "sha256": "709471b55c41ec72fe0ca4eb87af0740ab9a947ef0b31c36f8cf51afc58d3ccb"
     },
     {
       "path": ".github/skills/refine-requirements/SKILL.md",
       "source": "payload/core/.github/skills/refine-requirements/SKILL.md",
-      "sha256": "70ee4dcf4fd3568c835428dae4b2a830604793d3d486e1c903c26e100fab6e64"
+      "sha256": "5787cd7f70231355b951d58f792665a79da336d6f17ea9f4d6634928ab452623"
     },
     {
       "path": ".github/skills/setup/SKILL.md",
       "source": "payload/core/.github/skills/setup/SKILL.md",
-      "sha256": "2f1b88b31b2c7233a00ab9293cd98a5fade00e114e1a442a793affbc7fe4ad83"
+      "sha256": "8f92aed1684a3dfd2ecffeb584b5da4daa9c7d7d7ab7ca7f01c8c6a4c82eaa1d"
     },
     {
       "path": ".github/skills/start-work/SKILL.md",
       "source": "payload/core/.github/skills/start-work/SKILL.md",
-      "sha256": "f054edd5a745489623579d25e334f5fcd6cebd6e73b86970074e7c2444f9af40"
+      "sha256": "8a1213e59c5452feb5c8820530f6131115f88419299e42462ee5d32361d62fb6"
+    },
+    {
+      "path": ".github/skills/ux-review/SKILL.md",
+      "source": "payload/core/.github/skills/ux-review/SKILL.md",
+      "sha256": "2d0031a7041b8174ef056cf35015d5a9faadbc960313b3d1117bf55b8cb44486"
     },
     {
       "path": ".github/skills/wait-what/SKILL.md",
       "source": "payload/core/.github/skills/wait-what/SKILL.md",
       "sha256": "dba3aa4f042b813de960b60c47ae4c8a3dccb72fdc89c597fe04b720b27f5316"
+    },
+    {
+      "path": ".github/skills/web-guidance/SKILL.md",
+      "source": "payload/core/.github/skills/web-guidance/SKILL.md",
+      "sha256": "b2064b1fea2ae7249685278e291cda6b4739a7601f8c2dc43a797f324c9fbda1"
     },
     {
       "path": "docs/project-forge/ADOPTION_WORKFLOW.md",
@@ -115,24 +130,19 @@
       "sha256": "99aace96ebd9ebcb7c11cf93850330ee1a0eb3841a31c42edc318e1d913777aa"
     },
     {
+      "path": "docs/project-forge/WORKSTATION_MAINTENANCE.md",
+      "source": "payload/core/docs/project-forge/WORKSTATION_MAINTENANCE.md",
+      "sha256": "beff0c78e9ef139f6e611176f02ee5b188387be1ee876d67401c5212566c36cb"
+    },
+    {
       "path": "docs/project-forge/WORK_ITEM_CONTEXT.md",
       "source": "payload/core/docs/project-forge/WORK_ITEM_CONTEXT.md",
       "sha256": "5c03661df4994c24d7b7429fd1c9191e9eaaf18624e6af2fc0615d11b2ec3dd2"
     },
     {
-      "path": "docs/project-forge/templates/FEATURE_BRIEF_TEMPLATE.md",
-      "source": "payload/briefs/docs/project-forge/templates/FEATURE_BRIEF_TEMPLATE.md",
-      "sha256": "d09737d7e67b7bad50a779ce0a6b3a95d17ba9de7a2e60423763ea3d934ce768"
-    },
-    {
-      "path": "docs/project-forge/templates/PRODUCT_BRIEF_TEMPLATE.md",
-      "source": "payload/briefs/docs/project-forge/templates/PRODUCT_BRIEF_TEMPLATE.md",
-      "sha256": "fcab7508dd5d53ea9dac3a35b7c31b4adac8c1c37b5df2224f2fb47c52432f58"
-    },
-    {
-      "path": "docs/project-forge/templates/REQUIREMENTS_TEMPLATE.md",
-      "source": "payload/briefs/docs/project-forge/templates/REQUIREMENTS_TEMPLATE.md",
-      "sha256": "ec85cc723071edb01f09acca41e20e9833afe21d06d103b39dfcdbfb59a31aed"
+      "path": "tools/project-forge-setup/maintenance.py",
+      "source": "payload/core/tools/project-forge-setup/maintenance.py",
+      "sha256": "55d22445834108d2fb7f2ac8aa4a5c5b0326c01f67e5f305b8284e4f15a0dcd8"
     }
   ]
 }

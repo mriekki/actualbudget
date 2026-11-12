@@ -49,21 +49,25 @@ Never use `reset --hard`, force-push, merge, or rebase as part of `/pull-latest`
 
 ## 3. Choose the update target
 
+When the user must choose an update action, use the host-native **single-select structured choice UI** when available; in VS Code use the native question surface such as `vscode_askQuestions`. Use a numbered text menu only when structured choice UI is unavailable.
+
 If the human supplied a branch, use that branch as the requested target when it can be resolved safely.
 
-If no branch was supplied and the current branch is the default branch, present:
+If no branch was supplied and the current branch is the default branch, show:
 
 ```text
 PULL LATEST READY
 
 Current branch: <branch>
 Working tree: CLEAN
-
-1. Refresh remote state and pull latest <branch> [GIT WRITE] — recommended
-2. Stop [NO ACTION]
 ```
 
-If no branch was supplied and the current branch is a non-default branch, present:
+Then offer:
+
+- `Refresh remote state and pull latest <branch>` `[GIT WRITE]` — `RECOMMENDED`
+- `Stop` `[NO ACTION]`
+
+If no branch was supplied and the current branch is a non-default branch, show:
 
 ```text
 PULL LATEST READY
@@ -71,13 +75,15 @@ PULL LATEST READY
 Current branch: <branch>
 Default branch: <default>
 Working tree: CLEAN
-
-1. Refresh and pull the current branch [GIT WRITE]
-2. Switch to the default branch and pull latest [GIT WRITE] — recommended for returning to baseline
-3. Stop [NO ACTION]
 ```
 
-Only the selected option authorizes fetch/switch/pull mechanics for the selected branch.
+Then offer:
+
+- `Refresh and pull the current branch` `[GIT WRITE]`
+- `Switch to the default branch and pull latest` `[GIT WRITE]` — `RECOMMENDED` when returning to baseline
+- `Stop` `[NO ACTION]`
+
+Only the selected choice authorizes fetch/switch/pull mechanics for the selected branch.
 
 ## 4. Refresh remote state
 
